@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 public interface Buyable {
 
-    String getName();
-    BigDecimal price();
+    String getBrand();
+    double getPrice();
 
 }

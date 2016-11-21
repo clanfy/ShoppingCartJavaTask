@@ -22,5 +22,9 @@ public class Milk implements Buyable {
         return this.price;
     }
 
+    public void setPrice(double newPrice){
+        this.price = newPrice;
+    }
+
 
 }

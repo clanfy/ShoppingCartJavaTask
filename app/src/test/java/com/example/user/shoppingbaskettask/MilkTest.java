@@ -27,4 +27,10 @@ public class MilkTest {
     public void canGetPrice(){
         assertEquals(1.12, milk1.getPrice());
     }
+
+    @Test
+    public void canSetPrice(){
+        milk1.setPrice(0.99);
+        assertEquals(0.99, milk1.getPrice());
+    }
 }

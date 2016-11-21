@@ -18,8 +18,14 @@ public class BreadTest {
         bread1 = new Bread("Wonder Bread", "Whole Wheat", 2.50);
     }
 
-    @Test 
+    @Test
     public void canGetBrand(){
         assertEquals("Wonder Bread", bread1.getBrand());
     }
+
+    @Test
+    public void canGetPrice(){
+        assertEquals(2.50, bread1.getPrice());
+    }
+
 }

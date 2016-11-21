@@ -28,4 +28,9 @@ public class BreadTest {
         assertEquals(2.50, bread1.getPrice());
     }
 
+    @Test
+    public void canGetType(){
+        assertEquals("Whole Wheat", bread1.getType());
+    }
+
 }

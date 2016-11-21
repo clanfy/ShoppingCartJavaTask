@@ -39,4 +39,10 @@ public class BreadTest {
         assertEquals("White", bread1.getType());
     }
 
+    @Test
+    public void canSetPrice(){
+        bread1.setPrice(3.00);
+        assertEquals(3.00, bread1.getPrice());
+    }
+
 }

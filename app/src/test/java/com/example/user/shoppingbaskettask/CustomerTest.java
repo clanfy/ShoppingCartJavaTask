@@ -47,4 +47,9 @@ public class CustomerTest {
         assertEquals(55.50, customer2.getMoney());
     }
 
+    @Test
+    public void basketStartsEmpty(){
+        assertEquals(0,customer1.basketCount());
+    }
+
 }

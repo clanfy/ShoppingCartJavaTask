@@ -37,4 +37,12 @@ public class Customer {
         this.hasLoyaltyCard = setCard;
     }
 
+    public int basketCount(){
+        return this.shoppingBasket.size();
+    }
+
+    public void addToBasket(Buyable item){
+        this.shoppingBasket.add(item);
+    }
+
 }

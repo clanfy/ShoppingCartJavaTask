@@ -28,4 +28,17 @@ public class EggsTest {
         assertEquals(0.80, eggs1.getPrice());
     }
 
+    @Test
+    public void canSetPrice(){
+        eggs1.setPrice(0.89);
+        assertEquals(0.89, eggs1.getPrice());
+    }
+
+
+    @Test
+    public void canGetAmount(){
+        assertEquals(12, eggs1.getAmount());
+    }
+
+
 }

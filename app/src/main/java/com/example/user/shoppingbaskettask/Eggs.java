@@ -24,8 +24,13 @@ public class Eggs implements Buyable {
         return this.price;
     }
 
+    public void setPrice(double newPrice){
+        this.price = newPrice;
+    }
+
     public int getAmount(){
         return this.amount;
     }
+
 
 }

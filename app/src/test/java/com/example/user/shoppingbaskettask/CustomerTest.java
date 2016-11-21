@@ -17,8 +17,8 @@ public class CustomerTest {
 
     @Before
     public void before(){
-        customer1 = new Customer("Doris", true);
-        customer2 = new Customer("Mavis", false);
+        customer1 = new Customer("Doris", 100.00, true);
+        customer2 = new Customer("Mavis", 55.50, false);
     }
 
     @Test
@@ -38,6 +38,13 @@ public class CustomerTest {
         customer2.setLoyaltyCard(true);
         assertEquals(false, customer1.getLoyaltyCard());
         assertEquals(true, customer2.getLoyaltyCard());
+    }
+
+    @Test
+    public void canGetMoney(){
+        double customerMoney = customer1.getMoney();
+        assertEquals(100.00, customerMoney);
+        assertEquals(55.50, customer2.getMoney());
     }
 
 }

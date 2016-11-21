@@ -1,5 +1,6 @@
 package com.example.user.shoppingbaskettask;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -10,11 +11,13 @@ public class Customer {
 
     private String name;
     private ArrayList<Buyable> shoppingBasket;
+    private double money;
     private boolean hasLoyaltyCard;
 
-    public Customer(String name, boolean hasLoyaltyCard){
+    public Customer(String name, double money, boolean hasLoyaltyCard){
         this.name = name;
         this.shoppingBasket = new ArrayList<Buyable>();
+        this.money = money;
         this.hasLoyaltyCard = hasLoyaltyCard;
     }
 
@@ -24,6 +27,10 @@ public class Customer {
 
     public boolean getLoyaltyCard(){
         return this.hasLoyaltyCard;
+    }
+
+    public double getMoney(){
+        return this.money;
     }
 
     public void setLoyaltyCard(boolean setCard){

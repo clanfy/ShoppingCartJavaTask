@@ -23,4 +23,9 @@ public class EggsTest {
         assertEquals("Chickening Out", eggs1.getBrand());
     }
 
+    @Test
+    public void canGetPrice(){
+        assertEquals(0.80, eggs1.getPrice());
+    }
+
 }

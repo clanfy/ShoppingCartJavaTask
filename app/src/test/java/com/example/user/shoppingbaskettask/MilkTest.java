@@ -22,4 +22,9 @@ public class MilkTest {
     public void canGetBrand(){
         assertEquals("Cloverdale", milk1.getBrand());
     }
+
+    @Test
+    public void canGetPrice(){
+        assertEquals(1.12, milk1.getPrice());
+    }
 }

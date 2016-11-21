@@ -33,4 +33,10 @@ public class BreadTest {
         assertEquals("Whole Wheat", bread1.getType());
     }
 
+    @Test
+    public void canSetType(){
+        bread1.setType("White");
+        assertEquals("White", bread1.getType());
+    }
+
 }

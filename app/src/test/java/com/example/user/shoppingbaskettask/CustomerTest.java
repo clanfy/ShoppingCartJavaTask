@@ -15,12 +15,14 @@ public class CustomerTest {
     Customer customer1;
     Customer customer2;
     Milk milk;
+    Bread bread;
 
     @Before
     public void before(){
         customer1 = new Customer("Doris", 100.00, true);
         customer2 = new Customer("Mavis", 55.50, false);
         milk = new Milk ("Cloverdale");
+        bread = new Bread("Wonder Bread", "Whole Wheat", 2.50);
     }
 
     @Test
@@ -68,6 +70,13 @@ public class CustomerTest {
     @Test
     public void canGetMilkPrice(){
         assertEquals(1.12, milk.getPrice());
+    }
+
+    @Test
+    public void canAddMilkAndBread(){
+        customer2.addToBasket(milk);
+        customer2.addToBasket(bread);
+        assertEquals(2, customer2.basketCount());
     }
 
 }

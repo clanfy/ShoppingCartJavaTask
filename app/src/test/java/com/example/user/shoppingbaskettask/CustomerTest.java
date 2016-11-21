@@ -79,4 +79,21 @@ public class CustomerTest {
         assertEquals(2, customer2.basketCount());
     }
 
+    @Test
+    public void canRemoveItem(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.addToBasket(bread);
+        customer1.removeFromBasket(milk);
+        assertEquals(2, customer1.basketCount());
+    }
+
+    @Test
+    public void wontRemoveItemIfNotPresent(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.removeFromBasket(bread);
+        assertEquals(2, customer1.basketCount());
+    }
+
 }

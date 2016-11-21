@@ -45,4 +45,8 @@ public class Customer {
         this.shoppingBasket.add(item);
     }
 
+    public void removeFromBasket(Buyable item){
+        this.shoppingBasket.remove(item);
+    }
+
 }

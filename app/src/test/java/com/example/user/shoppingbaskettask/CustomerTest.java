@@ -32,4 +32,12 @@ public class CustomerTest {
         assertEquals(false, customer2.getLoyaltyCard());
     }
 
+    @Test
+    public void canSetLoyaltyCard(){
+        customer1.setLoyaltyCard(false);
+        customer2.setLoyaltyCard(true);
+        assertEquals(false, customer1.getLoyaltyCard());
+        assertEquals(true, customer2.getLoyaltyCard());
+    }
+
 }

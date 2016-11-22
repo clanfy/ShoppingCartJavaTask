@@ -198,7 +198,12 @@ public class CustomerTest {
         assertEquals(1, customer1.countItemOccurrences(milk));
     }
 
-
+    @Test
+    public void canConfirmBOGOF(){
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(eggs);
+        assertEquals(true, customer1.checkBOGOF(eggs));
+    }
 
 
 

@@ -75,6 +75,15 @@ public class Customer {
         return occurrences;
     }
 
+    public boolean checkBOGOF(Buyable item){
+
+        if (countItemOccurrences(item) > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
 

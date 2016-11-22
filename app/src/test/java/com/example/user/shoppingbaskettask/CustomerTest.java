@@ -91,6 +91,30 @@ public class CustomerTest {
     }
 
     @Test
+    public void canAddEggs(){
+        customer1.addToBasket(eggs);
+        assertEquals(1, customer1.basketCount());
+    }
+
+    @Test
+    public void canGetEggsBrand(){
+        customer1.addToBasket(eggs);
+        assertEquals("Chickening Out", eggs.getBrand());
+    }
+
+    @Test
+    public void canGetEggsPrice(){
+        customer2.addToBasket(eggs);
+        assertEquals(0.80, eggs.getPrice());
+    }
+
+    @Test
+    public void canGetEggsAmount(){
+        customer1.addToBasket(eggs);
+        assertEquals(12, eggs.getAmount());
+    }
+
+    @Test
     public void canAddMilkAndBread(){
         customer2.addToBasket(milk);
         customer2.addToBasket(bread);
@@ -128,6 +152,8 @@ public class CustomerTest {
         customer2.addToBasket(bread);
         assertEquals(3.62, customer2.calculateShoppingTotal());
     }
+
+
 
 
 

@@ -153,6 +153,14 @@ public class CustomerTest {
         assertEquals(3.62, customer2.calculateShoppingTotal());
     }
 
+    @Test
+    public void canCalculateShoppingTotalOfAllItems(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(bread);
+        assertEquals(4.42, customer1.calculateShoppingTotal());
+    }
+
 
 
 

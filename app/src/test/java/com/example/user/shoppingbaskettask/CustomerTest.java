@@ -97,7 +97,15 @@ public class CustomerTest {
     }
 
     @Test
-    public void canCalculateShoppingtotal(){
+    public void canEmptyBasket(){
+        customer2.addToBasket(milk);
+        customer2.addToBasket(bread);
+        customer2.emptyBasket();
+        assertEquals(0, customer2.basketCount());
+    }
+
+    @Test
+    public void canCalculateShoppingTotal(){
         customer2.addToBasket(milk);
         customer2.addToBasket(bread);
         assertEquals(3.62, customer2.calculateShoppingTotal());

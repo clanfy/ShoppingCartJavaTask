@@ -48,6 +48,10 @@ public class Customer {
         this.shoppingBasket.remove(item);
     }
 
+    public void emptyBasket(){
+        this.shoppingBasket.clear();
+    }
+
     public double calculateShoppingTotal(){
 
         double total = 0;

@@ -205,6 +205,13 @@ public class CustomerTest {
         assertEquals(true, customer1.checkBOGOF(eggs));
     }
 
+    @Test
+    public void canConfirmCantBOGOF(){
+        customer2.addToBasket(eggs);
+        customer2.addToBasket(eggs);
+        assertEquals(false, customer2.checkBOGOF(bread));
+    }
+
 
 
 

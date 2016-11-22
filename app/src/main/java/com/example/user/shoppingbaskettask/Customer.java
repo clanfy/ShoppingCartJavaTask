@@ -1,6 +1,5 @@
 package com.example.user.shoppingbaskettask;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -48,5 +47,16 @@ public class Customer {
     public void removeFromBasket(Buyable item){
         this.shoppingBasket.remove(item);
     }
+
+    public double calculateShoppingTotal(){
+
+        double total = 0;
+
+        for (Buyable item : this.shoppingBasket){
+            total += item.getPrice();
+        }
+        return total;
+    }
+
 
 }

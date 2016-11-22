@@ -48,6 +48,13 @@ public class Customer {
         this.shoppingBasket.remove(item);
     }
 
+    public Buyable removeItemFromBasket() {
+        if (basketCount() > 0) {
+            return shoppingBasket.remove(0);
+        }
+        return null;
+    }
+
     public void emptyBasket(){
         this.shoppingBasket.clear();
     }
@@ -61,6 +68,8 @@ public class Customer {
         }
         return total;
     }
+
+
 
 
 }

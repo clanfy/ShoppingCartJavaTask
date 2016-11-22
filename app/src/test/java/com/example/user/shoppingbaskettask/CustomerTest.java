@@ -161,6 +161,30 @@ public class CustomerTest {
         assertEquals(4.42, customer1.calculateShoppingTotal());
     }
 
+    @Test
+    public void canGetMilkBack(){
+        customer1.addToBasket(milk);
+        Buyable item = customer1.removeItemFromBasket();
+        Milk milk = (Milk) item;
+        assertEquals("Cloverdale", milk.getBrand());
+    }
+
+    @Test
+    public void canGetBreadBack(){
+        customer1.addToBasket(bread);
+        Buyable item = customer1.removeItemFromBasket();
+        Bread bread = (Bread) item;
+        assertEquals("Wonder Bread", bread.getBrand());
+    }
+
+    @Test
+    public void canGetEggsBack(){
+        customer1.addToBasket(eggs);
+        Buyable item = customer1.removeItemFromBasket();
+        Eggs eggs = (Eggs) item;
+        assertEquals("Chickening Out", eggs.getBrand());
+    }
+
 
 
 

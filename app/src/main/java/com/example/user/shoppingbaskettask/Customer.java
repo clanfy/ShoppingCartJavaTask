@@ -91,6 +91,18 @@ public class Customer {
 
     }
 
+    public double subtractItemPriceIfBOGOF(Buyable item) {
+
+        boolean canBOGOF = checkBOGOF(item);
+
+        if (canBOGOF) {
+           return subtractItemPriceFromTotal(item);
+        }
+        else {
+            return calculateShoppingTotal();
+        }
+    }
+
 
 
 }

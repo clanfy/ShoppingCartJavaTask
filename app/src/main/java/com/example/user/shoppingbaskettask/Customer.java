@@ -1,6 +1,7 @@
 package com.example.user.shoppingbaskettask;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by user on 21/11/2016.
@@ -67,6 +68,11 @@ public class Customer {
             total += item.getPrice();
         }
         return total;
+    }
+
+    public int countItemOccurrences(Buyable item){
+        int occurrences = Collections.frequency(this.shoppingBasket, item);
+        return occurrences;
     }
 
 

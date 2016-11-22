@@ -185,6 +185,20 @@ public class CustomerTest {
         assertEquals("Chickening Out", eggs.getBrand());
     }
 
+    @Test
+    public void canCountOccurrences(){
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(milk);
+        assertEquals(3, customer1.countItemOccurrences(eggs));
+        assertEquals(2, customer1.countItemOccurrences(bread));
+        assertEquals(1, customer1.countItemOccurrences(milk));
+    }
+
+
 
 
 

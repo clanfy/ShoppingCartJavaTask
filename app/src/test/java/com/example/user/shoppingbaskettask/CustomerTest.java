@@ -16,6 +16,7 @@ public class CustomerTest {
     Customer customer2;
     Milk milk;
     Bread bread;
+    Eggs eggs;
 
     @Before
     public void before(){
@@ -23,6 +24,7 @@ public class CustomerTest {
         customer2 = new Customer("Mavis", 55.50, false);
         milk = new Milk ("Cloverdale");
         bread = new Bread("Wonder Bread", "Whole Wheat", 2.50);
+        eggs = new Eggs("Chickening Out", 0.80, 12);
     }
 
     @Test
@@ -70,6 +72,22 @@ public class CustomerTest {
     @Test
     public void canGetMilkPrice(){
         assertEquals(1.12, milk.getPrice());
+    }
+
+    @Test
+    public void canAddBread(){
+        customer2.addToBasket(bread);
+        assertEquals(1, customer2.basketCount());
+    }
+
+    @Test
+    public void canGetBreadBrand(){
+        assertEquals("Wonder Bread", bread.getBrand());
+    }
+
+    @Test
+    public void canGetBreadPrice(){
+        assertEquals(2.50, bread.getPrice());
     }
 
     @Test

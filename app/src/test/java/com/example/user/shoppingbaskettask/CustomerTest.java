@@ -226,8 +226,7 @@ public class CustomerTest {
         customer1.addToBasket(milk);
         customer1.addToBasket(bread);
         customer1.addToBasket(milk);
-        customer1.subtractFromTotal(milk);
-        assertEquals(3.62, customer1.subtractFromTotal(milk));
+        assertEquals(3.62, customer1.subtractItemPriceFromTotal(milk));
     }
 
 

@@ -85,10 +85,8 @@ public class Customer {
         }
     }
 
-    public double subtractFromTotal(Buyable item){
-
+    public double subtractItemPriceFromTotal(Buyable item){
         double customerTotal = calculateShoppingTotal();
-
         return customerTotal - item.getPrice();
 
     }

@@ -215,9 +215,10 @@ public class CustomerTest {
     @Test
     public void canConfirmMultipleBOGOFS(){
         customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
         customer1.addToBasket(bread);
         assertEquals(true, customer1.checkBOGOF(milk));
-        assertEquals(true, customer1.checkBOGOF(bread));
+        assertEquals(false, customer1.checkBOGOF(bread));
         assertEquals(false, customer1.checkBOGOF(eggs));
     }
 

@@ -77,7 +77,7 @@ public class Customer {
 
     public boolean checkBOGOF(Buyable item){
 
-        if (countItemOccurrences(item) > 0) {
+        if (countItemOccurrences(item) >= 2) {
             return true;
         }
         else {

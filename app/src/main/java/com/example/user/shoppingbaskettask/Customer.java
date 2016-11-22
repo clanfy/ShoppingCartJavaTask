@@ -96,12 +96,31 @@ public class Customer {
         boolean canBOGOF = checkBOGOF(item);
 
         if (canBOGOF) {
-           return subtractItemPriceFromTotal(item);
+            return subtractItemPriceFromTotal(item);
         }
         else {
             return calculateShoppingTotal();
         }
     }
+
+    // working on going through shopping basket array and subtracting item prices of multiple BOGOFS
+
+    public double subtractItemPricesIfMultipleBOGOF() {
+
+        for (Buyable item : this.shoppingBasket) {
+
+            boolean canBOGOF = checkBOGOF(item);
+            double total = 0;
+
+            if (canBOGOF) {
+                 total += subtractItemPriceFromTotal(item);
+            } else {
+                total += calculateShoppingTotal();
+            }
+            return total;
+        }
+    }
+
 
 
 

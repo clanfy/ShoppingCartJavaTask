@@ -253,6 +253,15 @@ public class CustomerTest {
         assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(eggs));
     }
 
+    @Test
+    public void canSubtractMultipleBOGOFS(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        assertEquals(3.62, customer1.subtractItemPricesIfMultipleBOGOF());
+    }
+
 
 
 

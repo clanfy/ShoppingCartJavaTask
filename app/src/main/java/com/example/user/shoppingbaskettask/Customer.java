@@ -87,6 +87,18 @@ public class Customer {
         }
     }
 
+    public double returnBOGOFDiscount(Buyable item) {
+
+            if (checkBOGOF(item)) {
+
+                double halfPrice = item.getPrice() / 2;
+                return halfPrice;
+            } else {
+                return 0.00;
+            }
+
+        }
+
     public boolean checkIfTotalIsGreaterThan20(){
 
         if (calculateShoppingTotal() >= 20.00) {
@@ -95,6 +107,8 @@ public class Customer {
             return false;
         }
     }
+
+    //once BOGOF method works, substitute for calculateShoppingTotal()
 
     public double subtract10PercentIfOver20(){
 
@@ -109,18 +123,6 @@ public class Customer {
         }
     }
 
-//    public double subtractTwoPercentIfHaveLoyaltyCard(){
-//
-//        if (getLoyaltyCard()){
-//
-//            double calculation = subtract10PercentIfOver20() * 0.02;
-//            double roundOff = Math.round(calculation * 100.0) / 100.0;
-//
-//                return subtract10PercentIfOver20() - roundOff;
-//            } else {
-//            return subtract10PercentIfOver20();
-//        }
-//    }
 
     public double subtractTwoPercentIfHaveLoyaltyCard(){
 
@@ -137,20 +139,6 @@ public class Customer {
     }
 
 
-
-
-
-//    public ArrayList<String> returnBOGOFStringArray(){
-//
-//        ArrayList<String> stringBasket = new ArrayList<String>();
-//
-//        for (Buyable item : this.shoppingBasket){
-//
-//            stringBasket.add(item.getBrand());
-//        }
-//
-//        return stringBasket;
-//    }
 
 
 //    public double subtractItemPriceFromTotal(Buyable item){

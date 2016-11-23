@@ -87,12 +87,13 @@ public class Customer {
         }
     }
 
+
     public double returnBOGOFDiscount(Buyable item) {
 
             if (checkBOGOF(item)) {
 
-                double halfPrice = item.getPrice() / 2;
-                return halfPrice;
+                double halfPriceDiscount = item.getPrice() / 2;
+                return halfPriceDiscount;
             } else {
                 return 0.00;
             }

@@ -277,7 +277,7 @@ public class CustomerTest {
         assertEquals(18.63, customer1.subtractTwoPercentIfHaveLoyaltyCard());
     }
 
-    @Test public void canApplyBOGOF(){
+    @Test public void canApplyBOGOFIfEvenItems(){
         customer2.addToBasket(bread);
         customer2.addToBasket(bread);
         assertEquals(1.25, customer2.returnBOGOFDiscount(bread));
@@ -287,6 +287,7 @@ public class CustomerTest {
         customer2.addToBasket(bread);
         assertEquals(0.00, customer2.returnBOGOFDiscount(bread));
     }
+
 
 //    @Test
 //    public void canReturnBOGOFArray(){

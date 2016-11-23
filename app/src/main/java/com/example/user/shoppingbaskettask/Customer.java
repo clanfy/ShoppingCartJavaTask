@@ -120,7 +120,7 @@ public class Customer {
 
     public boolean checkIfTotalIsGreaterThan20(){
 
-        if (calculateShoppingTotal() >= 20.00) {
+        if (totalAfterBOGOFDiscount() >= 20.00) {
             return true;
         } else {
             return false;
@@ -133,12 +133,12 @@ public class Customer {
 
         if (checkIfTotalIsGreaterThan20()) {
 
-            double calculation = calculateShoppingTotal() * 0.10;
+            double calculation = totalAfterBOGOFDiscount() * 0.10;
             double roundOff = Math.round(calculation * 100.0) / 100.0;
 
-           return calculateShoppingTotal() - roundOff;
+           return totalAfterBOGOFDiscount() - roundOff;
         } else {
-            return calculateShoppingTotal();
+            return totalAfterBOGOFDiscount();
         }
     }
 

@@ -240,6 +240,7 @@ public class CustomerTest {
     @Test
     public void canConfirmOver20(){
         customer1.addToBasket(milk);
+        customer1.addToBasket(eggs);
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
@@ -248,21 +249,22 @@ public class CustomerTest {
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
-        assertEquals(21.12, customer1.calculateShoppingTotal());
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        assertEquals(41.92, customer1.calculateShoppingTotal());
+        assertEquals(21.92, customer1.totalAfterBOGOFDiscount());
         assertEquals(true, customer1.checkIfTotalIsGreaterThan20());
-        assertEquals(19.01, customer1.subtract10PercentIfOver20());
+        assertEquals(19.73, customer1.subtract10PercentIfOver20());
     }
 
     @Test
-    public void canConfirmIfNotOver20(){
-        customer1.addToBasket(bread);
-        customer1.addToBasket(bread);
-        assertEquals(5.00, customer1.calculateShoppingTotal());
-        assertEquals(5.00, customer1.subtract10PercentIfOver20());
-    }
-
-    @Test
-    public void canApplyLoyaltyDiscount(){
+    public void canConfirmNotOver20(){
         customer1.addToBasket(milk);
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
@@ -273,9 +275,35 @@ public class CustomerTest {
         customer1.addToBasket(bread);
         customer1.addToBasket(bread);
         assertEquals(21.12, customer1.calculateShoppingTotal());
-        assertEquals(19.01, customer1.subtract10PercentIfOver20(), 0.01);
-        assertEquals(18.63, customer1.subtractTwoPercentIfHaveLoyaltyCard());
+        assertEquals(11.12, customer1.totalAfterBOGOFDiscount());
+        assertEquals(false, customer1.checkIfTotalIsGreaterThan20());
+        assertEquals(11.12, customer1.subtract10PercentIfOver20());
     }
+
+//    @Test
+//    public void canConfirmIfNotOver20(){
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        assertEquals(5.00, customer1.calculateShoppingTotal());
+//        assertEquals(5.00, customer1.subtract10PercentIfOver20());
+//    }
+
+//    @Test
+//    public void canApplyLoyaltyDiscount(){
+//        customer1.addToBasket(milk);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        customer1.addToBasket(bread);
+//        assertEquals(21.12, customer1.calculateShoppingTotal());
+//        assertEquals(10.00, customer1.totalAfterBOGOFDiscount());
+//        assertEquals(19.01, customer1.subtract10PercentIfOver20(), 0.01);
+//        assertEquals(18.63, customer1.subtractTwoPercentIfHaveLoyaltyCard());
+//    }
 
     @Test public void canReturnBOGOFDiscountIfEvenItems(){
         customer2.addToBasket(bread);

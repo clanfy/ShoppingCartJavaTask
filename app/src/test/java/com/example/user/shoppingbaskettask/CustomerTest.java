@@ -280,13 +280,13 @@ public class CustomerTest {
         assertEquals(11.12, customer1.subtract10PercentIfOver20());
     }
 
-//    @Test
-//    public void canConfirmIfNotOver20(){
-//        customer1.addToBasket(bread);
-//        customer1.addToBasket(bread);
-//        assertEquals(5.00, customer1.calculateShoppingTotal());
-//        assertEquals(5.00, customer1.subtract10PercentIfOver20());
-//    }
+    @Test
+    public void canConfirmIfNotOver20(){
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        assertEquals(2.50, customer1.totalAfterBOGOFDiscount());
+        assertEquals(2.50, customer1.subtract10PercentIfOver20());
+    }
 
     @Test
     public void canApplyLoyaltyDiscount(){

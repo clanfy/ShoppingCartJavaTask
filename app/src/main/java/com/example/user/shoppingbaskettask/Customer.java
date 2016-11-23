@@ -3,6 +3,8 @@ package com.example.user.shoppingbaskettask;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static java.lang.Math.round;
+
 /**
  * Created by user on 21/11/2016.
  */
@@ -93,6 +95,20 @@ public class Customer {
             return false;
         }
     }
+
+    public double subtract10PercentIfOver20(){
+
+        if (checkIfTotalIsGreaterThan20()) {
+
+            double calculation = calculateShoppingTotal() * 0.10;
+            double roundOff = Math.round(calculation * 100.0) / 100.0;
+
+           return calculateShoppingTotal() - roundOff;
+        } else {
+            return calculateShoppingTotal();
+        }
+    }
+
 
 //    public ArrayList<String> returnBOGOFStringArray(){
 //

@@ -33,4 +33,9 @@ public class MilkTest {
         milk1.setPrice(0.99);
         assertEquals(0.99, milk1.getPrice());
     }
+
+    @Test
+    public void canApplyDiscount(){
+        assertEquals(0.00, milk1.applyDiscount());
+    }
 }

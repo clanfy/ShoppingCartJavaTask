@@ -4,7 +4,7 @@ package com.example.user.shoppingbaskettask;
  * Created by user on 21/11/2016.
  */
 
-public class Milk implements Buyable {
+public class Milk implements Buyable, Discountable {
 
     private String brand;
     private double price;
@@ -24,6 +24,10 @@ public class Milk implements Buyable {
 
     public void setPrice(double newPrice){
         this.price = newPrice;
+    }
+
+    public double applyDiscount(){
+        return this.price - this.price;
     }
 
 

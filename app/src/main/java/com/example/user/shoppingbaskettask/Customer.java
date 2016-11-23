@@ -100,7 +100,7 @@ public class Customer {
         boolean canBOGOF = checkBOGOF(item);
 
         if (canBOGOF) {
-            return subtractItemPriceFromTotal(item);
+            return calculateShoppingTotal() + subtractItemPrice(item);
         }
         else {
             return calculateShoppingTotal();

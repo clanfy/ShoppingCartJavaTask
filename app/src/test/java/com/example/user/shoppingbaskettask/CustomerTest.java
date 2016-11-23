@@ -297,6 +297,15 @@ public class CustomerTest {
         assertEquals(5.00, customer2.bOGOFDiscountsTotal());
     }
 
+    @Test public void canSubtractBOGOFDiscountsFromTotalBasket(){
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        customer2.addToBasket(milk);
+        assertEquals(6.12, customer2.totalAfterBOGOFDiscount());
+    }
+
 
 //    @Test
 //    public void canReturnBOGOFArray(){

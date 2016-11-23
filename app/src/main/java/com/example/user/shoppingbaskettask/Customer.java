@@ -110,6 +110,14 @@ public class Customer {
         return bOGOFTotal;
     }
 
+    public double totalAfterBOGOFDiscount(){
+
+        double totalAfterBOGOF = calculateShoppingTotal() - bOGOFDiscountsTotal();
+        double roundOff = Math.round(totalAfterBOGOF * 100.0) / 100.0;
+
+        return roundOff;
+    }
+
     public boolean checkIfTotalIsGreaterThan20(){
 
         if (calculateShoppingTotal() >= 20.00) {

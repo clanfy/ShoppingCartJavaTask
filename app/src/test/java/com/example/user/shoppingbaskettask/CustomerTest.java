@@ -224,40 +224,62 @@ public class CustomerTest {
         assertEquals(false, customer1.checkBOGOF(eggs));
     }
 
-//    @Test
-//    public void canSubtractItemPriceFromTotal(){
-//        customer1.addToBasket(milk);
-//        customer1.addToBasket(bread);
-//        customer1.addToBasket(milk);
-//        assertEquals(3.62, customer1.subtractItemPriceFromTotal(milk));
-//    }
-//
-//    @Test
-//    public void canSubtractIfBOGOF(){
-//        customer1.addToBasket(milk);
-//        customer1.addToBasket(milk);
-//        customer1.addToBasket(bread);
-//        assertEquals(3.62, customer1.subtractItemPriceIfBOGOF(milk));
-//    }
-//
-//    @Test
-//    public void cantSubtractIfNotBOGOF(){
-//        customer1.addToBasket(milk);
-//        customer1.addToBasket(eggs);
-//        customer1.addToBasket(bread);
-//        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(milk));
-//        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(bread));
-//        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(eggs));
-//    }
-//
+    @Test
+    public void canConfirmThatCantBOGOFIfNotTwoItems(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        assertEquals(false, customer1.checkBOGOF(milk));
+    }
+
+    @Test
+    public void confirmBOGOFRemoveItem(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.removeFromBasket(milk);
+        assertEquals(true, customer1.checkBOGOF(milk));
+    }
+
+    @Test
+    public void canSubtractItemPriceFromTotal(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(milk);
+        assertEquals(3.62, customer1.subtractItemPriceFromTotal(milk));
+    }
+
+    @Test
+    public void canSubtractItemPrice(){
+        assertEquals(-1.12, customer1.subtractItemPrice(milk));
+    }
+
+    @Test
+    public void canSubtractIfBOGOF(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(milk);
+        customer1.addToBasket(bread);
+        assertEquals(3.62, customer1.subtractItemPriceIfBOGOF(milk));
+    }
+
+    @Test
+    public void cantSubtractIfNotBOGOF(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(eggs);
+        customer1.addToBasket(bread);
+        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(milk));
+        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(bread));
+        assertEquals(4.42, customer1.subtractItemPriceIfBOGOF(eggs));
+    }
+
 //    @Test
 //    public void canSubtractMultipleBOGOFS(){
 //        customer1.addToBasket(milk);
 //        customer1.addToBasket(milk);
 //        customer1.addToBasket(bread);
 //        customer1.addToBasket(bread);
-//        assertEquals(3.62, customer1.subtractItemPriceIfBOGOF(milk));
-//        assertEquals(3.62, customer1.subtractItemPriceIfBOGOF(bread));
+//        assertEquals(3.62, customer1.subtractItemPricesIfMultipleBOGOF());
+//
 //    }
 
 

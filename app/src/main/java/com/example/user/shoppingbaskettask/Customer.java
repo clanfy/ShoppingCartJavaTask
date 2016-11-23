@@ -85,41 +85,43 @@ public class Customer {
         }
     }
 
-//    public double subtractItemPriceFromTotal(Buyable item){
-//        double customerTotal = calculateShoppingTotal();
-//        return customerTotal - item.getPrice();
-//
-//    }
-//
-//    public double subtractItemPriceIfBOGOF(Buyable item) {
-//
-//        boolean canBOGOF = checkBOGOF(item);
-//
-//        if (canBOGOF) {
-//            return subtractItemPriceFromTotal(item);
-//        }
-//        else {
-//            return calculateShoppingTotal();
-//        }
-//    }
+    public double subtractItemPriceFromTotal(Buyable item){
+        double customerTotal = calculateShoppingTotal();
+        return customerTotal - item.getPrice();
+
+    }
+
+    public double subtractItemPrice(Buyable item){
+        return -(item.getPrice());
+    }
+
+    public double subtractItemPriceIfBOGOF(Buyable item) {
+
+        boolean canBOGOF = checkBOGOF(item);
+
+        if (canBOGOF) {
+            return subtractItemPriceFromTotal(item);
+        }
+        else {
+            return calculateShoppingTotal();
+        }
+    }
+
 
     // working on going through shopping basket array and subtracting item prices of multiple BOGOFS
 //
-//    public double subtractItemPricesIfMultipleBOGOF() {
-//
-//        for (Buyable item : this.shoppingBasket) {
-//
-//            boolean canBOGOF = checkBOGOF(item);
-//            double total = calculateShoppingTotal();
-//
-//            if (canBOGOF) {
-//                 total += subtractItemPriceFromTotal(item);
-//            } else {
-//                total += calculateShoppingTotal();
-//            }
-//            return total;
-//        }
-//    }
+    public double subtractItemPricesIfMultipleBOGOF() {
+
+        double total = 0;
+
+        for (Buyable item : this.shoppingBasket){
+
+           total += subtractItemPriceIfBOGOF(item);
+
+        }
+        return total;
+
+    }
 
 
 

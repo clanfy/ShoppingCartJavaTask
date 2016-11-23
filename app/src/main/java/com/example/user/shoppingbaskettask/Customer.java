@@ -85,43 +85,65 @@ public class Customer {
         }
     }
 
-    public double subtractItemPriceFromTotal(Buyable item){
-        double customerTotal = calculateShoppingTotal();
-        return customerTotal - item.getPrice();
+    public boolean checkIfTotalIsGreaterThan20(){
 
-    }
-
-    public double subtractItemPrice(Buyable item){
-        return -(item.getPrice());
-    }
-
-    public double subtractItemPriceIfBOGOF(Buyable item) {
-
-        boolean canBOGOF = checkBOGOF(item);
-
-        if (canBOGOF) {
-            return calculateShoppingTotal() + subtractItemPrice(item);
-        }
-        else {
-            return calculateShoppingTotal();
+        if (calculateShoppingTotal() >= 20.00) {
+            return true;
+        } else {
+            return false;
         }
     }
+
+//    public ArrayList<String> returnBOGOFStringArray(){
+//
+//        ArrayList<String> stringBasket = new ArrayList<String>();
+//
+//        for (Buyable item : this.shoppingBasket){
+//
+//            stringBasket.add(item.getBrand());
+//        }
+//
+//        return stringBasket;
+//    }
+
+
+//    public double subtractItemPriceFromTotal(Buyable item){
+//        double customerTotal = calculateShoppingTotal();
+//        return customerTotal - item.getPrice();
+//
+//    }
+
+//    public double subtractItemPrice(Buyable item){
+//        return -(item.getPrice());
+//    }
+
+//    public double subtractItemPriceIfBOGOF(Buyable item) {
+//
+//        boolean canBOGOF = checkBOGOF(item);
+//
+//        if (canBOGOF) {
+//            return calculateShoppingTotal() + subtractItemPrice(item);
+//        }
+//        else {
+//            return calculateShoppingTotal();
+//        }
+//    }
 
 
     // working on going through shopping basket array and subtracting item prices of multiple BOGOFS
 //
-    public double subtractItemPricesIfMultipleBOGOF() {
-
-        double total = 0;
-
-        for (Buyable item : this.shoppingBasket){
-
-           total += subtractItemPriceIfBOGOF(item);
-
-        }
-        return total;
-
-    }
+//    public double subtractItemPricesIfMultipleBOGOF() {
+//
+//        double total = 0;
+//
+//        for (Buyable item : this.shoppingBasket){
+//
+//           total += subtractItemPriceIfBOGOF(item);
+//
+//        }
+//        return total;
+//
+//    }
 
 
 

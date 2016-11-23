@@ -77,7 +77,7 @@ public class Customer {
 
     public boolean checkBOGOF(Buyable item){
 
-        if (countItemOccurrences(item) >= 2) {
+        if (countItemOccurrences(item) >= 2 && (countItemOccurrences(item) % 2 == 0)) {
             return true;
         }
         else {
@@ -85,41 +85,41 @@ public class Customer {
         }
     }
 
-    public double subtractItemPriceFromTotal(Buyable item){
-        double customerTotal = calculateShoppingTotal();
-        return customerTotal - item.getPrice();
-
-    }
-
-    public double subtractItemPriceIfBOGOF(Buyable item) {
-
-        boolean canBOGOF = checkBOGOF(item);
-
-        if (canBOGOF) {
-            return subtractItemPriceFromTotal(item);
-        }
-        else {
-            return calculateShoppingTotal();
-        }
-    }
+//    public double subtractItemPriceFromTotal(Buyable item){
+//        double customerTotal = calculateShoppingTotal();
+//        return customerTotal - item.getPrice();
+//
+//    }
+//
+//    public double subtractItemPriceIfBOGOF(Buyable item) {
+//
+//        boolean canBOGOF = checkBOGOF(item);
+//
+//        if (canBOGOF) {
+//            return subtractItemPriceFromTotal(item);
+//        }
+//        else {
+//            return calculateShoppingTotal();
+//        }
+//    }
 
     // working on going through shopping basket array and subtracting item prices of multiple BOGOFS
-
-    public double subtractItemPricesIfMultipleBOGOF() {
-
-        for (Buyable item : this.shoppingBasket) {
-
-            boolean canBOGOF = checkBOGOF(item);
-            double total = 0;
-
-            if (canBOGOF) {
-                 total += subtractItemPriceFromTotal(item);
-            } else {
-                total += calculateShoppingTotal();
-            }
-            return total;
-        }
-    }
+//
+//    public double subtractItemPricesIfMultipleBOGOF() {
+//
+//        for (Buyable item : this.shoppingBasket) {
+//
+//            boolean canBOGOF = checkBOGOF(item);
+//            double total = calculateShoppingTotal();
+//
+//            if (canBOGOF) {
+//                 total += subtractItemPriceFromTotal(item);
+//            } else {
+//                total += calculateShoppingTotal();
+//            }
+//            return total;
+//        }
+//    }
 
 
 

@@ -277,15 +277,24 @@ public class CustomerTest {
         assertEquals(18.63, customer1.subtractTwoPercentIfHaveLoyaltyCard());
     }
 
-    @Test public void canApplyBOGOFIfEvenItems(){
+    @Test public void canReturnBOGOFDiscountIfEvenItems(){
         customer2.addToBasket(bread);
         customer2.addToBasket(bread);
         assertEquals(1.25, customer2.returnBOGOFDiscount(bread));
     }
 
-    @Test public void cantApplyBOGOF(){
+
+    @Test public void cantReturnBOGOFDiscount(){
         customer2.addToBasket(bread);
         assertEquals(0.00, customer2.returnBOGOFDiscount(bread));
+    }
+
+    @Test public void canReturnBOGOFDiscountTotalIfEvenItems(){
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        customer2.addToBasket(bread);
+        assertEquals(5.00, customer2.bOGOFDiscountsTotal());
     }
 
 

@@ -100,6 +100,16 @@ public class Customer {
 
         }
 
+    public double bOGOFDiscountsTotal(){
+
+        double bOGOFTotal = 0;
+
+        for (Buyable item : this.shoppingBasket){
+            bOGOFTotal += returnBOGOFDiscount(item);
+        }
+        return bOGOFTotal;
+    }
+
     public boolean checkIfTotalIsGreaterThan20(){
 
         if (calculateShoppingTotal() >= 20.00) {

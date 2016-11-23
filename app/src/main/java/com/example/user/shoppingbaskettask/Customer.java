@@ -109,6 +109,36 @@ public class Customer {
         }
     }
 
+//    public double subtractTwoPercentIfHaveLoyaltyCard(){
+//
+//        if (getLoyaltyCard()){
+//
+//            double calculation = subtract10PercentIfOver20() * 0.02;
+//            double roundOff = Math.round(calculation * 100.0) / 100.0;
+//
+//                return subtract10PercentIfOver20() - roundOff;
+//            } else {
+//            return subtract10PercentIfOver20();
+//        }
+//    }
+
+    public double subtractTwoPercentIfHaveLoyaltyCard(){
+
+        if (getLoyaltyCard()){
+
+            double calculation = subtract10PercentIfOver20() * 0.02;
+            double roundOff = Math.round(calculation * 100.0) / 100.0;
+            double roundedOff = Math.round((subtract10PercentIfOver20() - roundOff) * 100.0) / 100.0;
+
+            return roundedOff;
+        } else {
+            return subtract10PercentIfOver20();
+        }
+    }
+
+
+
+
 
 //    public ArrayList<String> returnBOGOFStringArray(){
 //

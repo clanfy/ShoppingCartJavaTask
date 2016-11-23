@@ -250,7 +250,7 @@ public class CustomerTest {
         customer1.addToBasket(bread);
         assertEquals(21.12, customer1.calculateShoppingTotal());
         assertEquals(true, customer1.checkIfTotalIsGreaterThan20());
-        assertEquals(19.01, customer1.subtract10PercentIfOver20(), 0.01);
+        assertEquals(19.01, customer1.subtract10PercentIfOver20());
     }
 
     @Test
@@ -259,6 +259,22 @@ public class CustomerTest {
         customer1.addToBasket(bread);
         assertEquals(5.00, customer1.calculateShoppingTotal());
         assertEquals(5.00, customer1.subtract10PercentIfOver20());
+    }
+
+    @Test
+    public void canApplyLoyaltyDiscount(){
+        customer1.addToBasket(milk);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        customer1.addToBasket(bread);
+        assertEquals(21.12, customer1.calculateShoppingTotal());
+        assertEquals(19.01, customer1.subtract10PercentIfOver20(), 0.01);
+        assertEquals(18.63, customer1.subtractTwoPercentIfHaveLoyaltyCard());
     }
 
 //    @Test
